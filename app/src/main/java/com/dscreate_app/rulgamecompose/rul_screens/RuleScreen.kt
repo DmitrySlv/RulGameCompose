@@ -7,6 +7,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Red
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
@@ -22,7 +23,8 @@ fun RuleScreen() {
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
                 .height(100.dp)
                 .wrapContentHeight()
                 .wrapContentWidth(),
@@ -33,8 +35,8 @@ fun RuleScreen() {
         )
         Box(
             modifier = Modifier
-            .weight(1f)
-            .fillMaxSize()
+                .weight(1f)
+                .fillMaxSize()
         ) {
             Image(
                 painter = painterResource(id = R.drawable.ruleta),
@@ -50,10 +52,24 @@ fun RuleScreen() {
         Button(
             onClick = { },
             colors = ButtonDefaults.buttonColors(backgroundColor = Red),
-            modifier = Modifier.fillMaxWidth().padding(10.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
         ) {
             Text(
                 text = "Старт",
+                color = White
+            )
+        }
+        Button(
+            onClick = { },
+            colors = ButtonDefaults.buttonColors(backgroundColor = Black),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+        ) {
+            Text(
+                text = "Тестовая кнопка",
                 color = White
             )
         }
